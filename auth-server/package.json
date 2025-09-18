@@ -9,7 +9,9 @@
   "author": "",
   "license": "ISC",
   "description": "",
+  "type": "module",
   "dependencies": {
+    "dotenv": "^17.2.2",
     "googleapis": "^118.0.0"
   }
 }
