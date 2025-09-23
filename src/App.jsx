@@ -3,26 +3,35 @@ import React, { useState, useEffect } from 'react';
 import EventList from './components/EventList';
 import CitySearch from './components/CitySearch';
 import NumberOfEvents from './components/NumberOfEvents';
-import { getEvents } from './api';
+import { getEvents, extractLocations } from './api';
 
 function App() {
   const [events, setEvents] = useState([]);
   const [locations, setLocations] = useState([]);
+  const [selectedCity, setSelectedCity] = useState("all");
+  const [numEvents, setNumEvents] = useState("32");
 
   useEffect(() => {
     const fetchEvents = async() => {
       const data = await getEvents();
       console.log("fetched events:", data);
       setEvents(data);
+      setLocations(extractLocations(data));
     };
     fetchEvents();
   }, []);
 
+  const filteredEvents = events.filter(
+    (event) => selectedCity === "all" || event.location === selectedCity
+  );
+
+  const eventsToDisplay = filteredEvents.slice(0, numEvents);
+
   return (
       <div className="App">
-        <CitySearch allLocations={locations}/>
-        <EventList events={events}/>
-        <NumberOfEvents/>
+        <CitySearch allLocations={locations} onCitySelected={setSelectedCity}/>
+        <NumberOfEvents numEvents={numEvents} onNumEventsChanged={setNumEvents}/>
+        <EventList events={eventsToDisplay}/>
       </div>
   );
 }
