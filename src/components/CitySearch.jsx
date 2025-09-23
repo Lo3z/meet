@@ -1,5 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 import React, {useState} from 'react';
+import PropTypes from "prop-types";
 
 // eslint-disable-next-line react/prop-types
 const CitySearch = ({ allLocations }) => {
@@ -8,7 +9,6 @@ const CitySearch = ({ allLocations }) => {
   const [suggestions, setSuggestions] = useState([]);
   const handleInputChanged = (event) => {
     const value = event.target.value;
-    // eslint-disable-next-line react/prop-types
     const filteredLocations = allLocations ? allLocations.filter((location) => {
       return location.toUpperCase().indexOf(value.toUpperCase()) > -1;
     }) : [];
@@ -45,5 +45,9 @@ const CitySearch = ({ allLocations }) => {
     </div>
   )
 }
+
+CitySearch.propTypes = {
+  allLocations: PropTypes.arrayOf(PropTypes.string),
+};
 
 export default CitySearch;

@@ -7,6 +7,7 @@ import { getEvents } from './api';
 
 function App() {
   const [events, setEvents] = useState([]);
+  const [locations, setLocations] = useState([]);
 
   useEffect(() => {
     const fetchEvents = async() => {
@@ -19,7 +20,7 @@ function App() {
 
   return (
       <div className="App">
-        <CitySearch/>
+        <CitySearch allLocations={locations}/>
         <EventList events={events}/>
         <NumberOfEvents/>
       </div>
