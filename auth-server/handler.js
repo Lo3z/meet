@@ -1,4 +1,5 @@
 import dotenv from 'dotenv';
+// eslint-disable-next-line no-undef
 if (process.env.NODE_ENV !== "production") {
   dotenv.config();
 }
@@ -10,6 +11,7 @@ const SCOPES = ["https://www.googleapis.com/auth/calendar.events.public.readonly
 const redirect_uris = ["https://meet-chi-five.vercel.app/"];
 
 const calendar = google.calendar("v3");
+// eslint-disable-next-line no-undef
 const { CLIENT_ID, CLIENT_SECRET, CALENDAR_ID} = process.env;
 
 const oAuth2Client = new google.auth.OAuth2(
