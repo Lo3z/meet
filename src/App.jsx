@@ -22,7 +22,8 @@ function App() {
   }, []);
 
   const filteredEvents = events.filter(
-    (event) => selectedCity === "all" || event.location === selectedCity
+    (event) => selectedCity === "all" || 
+    event.location.toUpperCase().includes(selectedCity.toUpperCase())
   );
 
   const eventsToDisplay = filteredEvents.slice(0, numEvents);
