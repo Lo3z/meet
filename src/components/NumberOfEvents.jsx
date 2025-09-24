@@ -3,7 +3,7 @@ import React, {useState} from 'react'
 import PropTypes from "prop-types";
 
 
-const NumberOfEvents = ({ numEvents, onNumEventsChanged }) => {
+const NumberOfEvents = ({ numEvents =32, onNumEventsChanged }) => {
   const handleInputChange = (event) => {
   const value = parseInt(event.target.value);
     if (!isNaN(value)) {
@@ -22,10 +22,6 @@ const NumberOfEvents = ({ numEvents, onNumEventsChanged }) => {
       onChange={handleInputChange}/>
     </div>
   );
-};
-
-NumberOfEvents.defaultProps = {
-  numEvents: 32,
 };
 
 NumberOfEvents.propTypes = {
