@@ -3,7 +3,7 @@ import React, {useState} from 'react';
 import PropTypes from "prop-types";
 
 // eslint-disable-next-line react/prop-types
-const CitySearch = ({ allLocations }) => {
+const CitySearch = ({ allLocations, onCitySelected }) => {
   const [showSuggestions, setShowSuggestions] = useState(false);
   const [query, setQuery] = useState("");
   const [suggestions, setSuggestions] = useState([]);
@@ -20,7 +20,12 @@ const CitySearch = ({ allLocations }) => {
     const value = event.target.textContent;
     setQuery(value);
     setShowSuggestions(false);
+    if(onCitySelected) {
+      onCitySelected(value === "See all cities" ? "": value);
+    }
   }
+
+ 
 
   return (
     <div id="city-search">

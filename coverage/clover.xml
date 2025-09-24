@@ -1,48 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1758663278174" clover="3.2.0">
-  <project timestamp="1758663278174" name="All files">
-    <metrics statements="38" coveredstatements="38" conditionals="10" coveredconditionals="9" methods="17" coveredmethods="17" elements="65" coveredelements="64" complexity="0" loc="38" ncloc="38" packages="2" files="7" classes="7"/>
+<coverage generated="1758672600605" clover="3.2.0">
+  <project timestamp="1758672600605" name="All files">
+    <metrics statements="61" coveredstatements="58" conditionals="18" coveredconditionals="12" methods="21" coveredmethods="19" elements="100" coveredelements="89" complexity="0" loc="61" ncloc="61" packages="2" files="7" classes="7"/>
     <package name="src">
-      <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4"/>
+      <metrics statements="24" coveredstatements="22" conditionals="2" coveredconditionals="1" methods="8" coveredmethods="6"/>
       <file name="App.jsx" path="C:\Users\carlo\Documents\CF\meet\src\App.jsx">
-        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="8" count="3" type="stmt"/>
+        <metrics statements="17" coveredstatements="15" conditionals="2" coveredconditionals="1" methods="5" coveredmethods="3"/>
+        <line num="9" count="4" type="stmt"/>
+        <line num="10" count="3" type="stmt"/>
+        <line num="11" count="3" type="stmt"/>
+        <line num="12" count="3" type="stmt"/>
+        <line num="14" count="3" type="stmt"/>
+        <line num="15" count="3" type="stmt"/>
+        <line num="16" count="3" type="stmt"/>
+        <line num="17" count="3" type="stmt"/>
+        <line num="18" count="3" type="stmt"/>
+        <line num="20" count="3" type="stmt"/>
+        <line num="23" count="3" type="stmt"/>
+        <line num="24" count="0" type="stmt"/>
+        <line num="26" count="3" type="stmt"/>
+        <line num="27" count="3" type="cond" truecount="1" falsecount="1"/>
+        <line num="28" count="0" type="stmt"/>
+        <line num="30" count="3" type="stmt"/>
+        <line num="32" count="3" type="stmt"/>
       </file>
       <file name="api.js" path="C:\Users\carlo\Documents\CF\meet\src\api.js">
         <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
-        <line num="3" count="3" type="stmt"/>
-        <line num="4" count="70" type="stmt"/>
-        <line num="5" count="2" type="stmt"/>
-        <line num="6" count="2" type="stmt"/>
-        <line num="9" count="3" type="stmt"/>
-        <line num="10" count="4" type="stmt"/>
+        <line num="3" count="4" type="stmt"/>
+        <line num="4" count="175" type="stmt"/>
+        <line num="5" count="5" type="stmt"/>
+        <line num="6" count="5" type="stmt"/>
+        <line num="9" count="4" type="stmt"/>
+        <line num="10" count="7" type="stmt"/>
       </file>
       <file name="mock-data.js" path="C:\Users\carlo\Documents\CF\meet\src\mock-data.js">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="3" type="stmt"/>
+        <line num="1" count="4" type="stmt"/>
       </file>
     </package>
     <package name="src.components">
-      <metrics statements="30" coveredstatements="30" conditionals="10" coveredconditionals="9" methods="13" coveredmethods="13"/>
+      <metrics statements="37" coveredstatements="36" conditionals="16" coveredconditionals="11" methods="13" coveredmethods="13"/>
       <file name="CitySearch.jsx" path="C:\Users\carlo\Documents\CF\meet\src\components\CitySearch.jsx">
-        <metrics statements="17" coveredstatements="17" conditionals="4" coveredconditionals="3" methods="6" coveredmethods="6"/>
-        <line num="5" count="2" type="stmt"/>
-        <line num="6" count="26" type="stmt"/>
+        <metrics statements="20" coveredstatements="19" conditionals="8" coveredconditionals="4" methods="6" coveredmethods="6"/>
+        <line num="6" count="2" type="stmt"/>
         <line num="7" count="26" type="stmt"/>
         <line num="8" count="26" type="stmt"/>
         <line num="9" count="26" type="stmt"/>
-        <line num="10" count="12" type="stmt"/>
-        <line num="12" count="12" type="cond" truecount="1" falsecount="1"/>
-        <line num="13" count="24" type="stmt"/>
-        <line num="15" count="12" type="stmt"/>
+        <line num="11" count="26" type="stmt"/>
+        <line num="12" count="12" type="stmt"/>
+        <line num="13" count="12" type="cond" truecount="1" falsecount="1"/>
+        <line num="14" count="24" type="stmt"/>
         <line num="16" count="12" type="stmt"/>
-        <line num="18" count="26" type="stmt"/>
-        <line num="19" count="1" type="stmt"/>
+        <line num="17" count="12" type="stmt"/>
+        <line num="19" count="26" type="stmt"/>
         <line num="20" count="1" type="stmt"/>
         <line num="21" count="1" type="stmt"/>
-        <line num="24" count="26" type="stmt"/>
-        <line num="31" count="3" type="stmt"/>
-        <line num="37" count="12" type="stmt"/>
+        <line num="22" count="1" type="stmt"/>
+        <line num="23" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="24" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="30" count="26" type="stmt"/>
+        <line num="37" count="3" type="stmt"/>
+        <line num="43" count="12" type="stmt"/>
+        <line num="55" count="2" type="stmt"/>
       </file>
       <file name="Event.jsx" path="C:\Users\carlo\Documents\CF\meet\src\components\Event.jsx">
         <metrics statements="5" coveredstatements="5" conditionals="4" coveredconditionals="4" methods="3" coveredmethods="3"/>
@@ -60,11 +79,15 @@
         <line num="15" count="2" type="stmt"/>
       </file>
       <file name="NumberOfEvents.jsx" path="C:\Users\carlo\Documents\CF\meet\src\components\NumberOfEvents.jsx">
-        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
-        <line num="4" count="2" type="stmt"/>
-        <line num="5" count="10" type="stmt"/>
-        <line num="6" count="10" type="stmt"/>
-        <line num="14" count="4" type="stmt"/>
+        <metrics statements="8" coveredstatements="8" conditionals="2" coveredconditionals="1" methods="2" coveredmethods="2"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="7" count="8" type="stmt"/>
+        <line num="8" count="2" type="stmt"/>
+        <line num="9" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="10" count="2" type="stmt"/>
+        <line num="14" count="8" type="stmt"/>
+        <line num="27" count="2" type="stmt"/>
+        <line num="31" count="2" type="stmt"/>
       </file>
     </package>
   </project>

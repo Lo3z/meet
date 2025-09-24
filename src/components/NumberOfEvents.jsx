@@ -2,9 +2,10 @@
 import React, {useState} from 'react'
 import PropTypes from "prop-types";
 
+
 const NumberOfEvents = ({ numEvents, onNumEventsChanged }) => {
   const handleInputChange = (event) => {
-    const value = parseInt(event.target.value, 10);
+  const value = parseInt(event.target.value);
     if (!isNaN(value)) {
       onNumEventsChanged(value);
     }
@@ -15,13 +16,16 @@ const NumberOfEvents = ({ numEvents, onNumEventsChanged }) => {
       <label htmlFor="event-count">Number of events: </label>
       <input 
       type="number" 
-      role="textbox"
+      min={0}
       id="event-count" 
-      min={1}
       value={numEvents}
       onChange={handleInputChange}/>
     </div>
   );
+};
+
+NumberOfEvents.defaultProps = {
+  numEvents: 32,
 };
 
 NumberOfEvents.propTypes = {

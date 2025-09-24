@@ -14,18 +14,19 @@ function App() {
   useEffect(() => {
     const fetchEvents = async() => {
       const data = await getEvents();
-      console.log("fetched events:", data);
       setEvents(data);
       setLocations(extractLocations(data));
     };
     fetchEvents();
   }, []);
 
-  const filteredEvents = events.filter(
-    (event) => selectedCity === "all" || 
-    event.location.toUpperCase().includes(selectedCity.toUpperCase())
-  );
-
+  const handleCitySelected = (city) => {
+    setSelectedCity(city);
+  };
+  <CitySearch allLocations={locations} onCitySelected={handleCitySelected}/>
+  const filteredEvents = selectedCity 
+  ? events.filter(event => event.location === selectedCity) : events;
+  
   const eventsToDisplay = filteredEvents.slice(0, numEvents);
 
   return (
