@@ -16,7 +16,7 @@ const NumberOfEvents = ({ numEvents, onNumEventsChanged }) => {
       <label htmlFor="event-count">Number of events: </label>
       <input 
       type="number" 
-      min={0}
+      min={1}
       id="event-count" 
       value={numEvents}
       onChange={handleInputChange}/>

@@ -8,8 +8,8 @@ import { getEvents, extractLocations } from './api';
 function App() {
   const [events, setEvents] = useState([]);
   const [locations, setLocations] = useState([]);
-  const [selectedCity, setSelectedCity] = useState("all");
-  const [numEvents, setNumEvents] = useState("32");
+  const [selectedCity, setSelectedCity] = useState("");
+  const [numEvents, setNumEvents] = useState(32);
 
   useEffect(() => {
     const fetchEvents = async() => {
@@ -20,12 +20,9 @@ function App() {
     fetchEvents();
   }, []);
 
-  const handleCitySelected = (city) => {
-    setSelectedCity(city);
-  };
-  <CitySearch allLocations={locations} onCitySelected={handleCitySelected}/>
   const filteredEvents = selectedCity 
-  ? events.filter(event => event.location === selectedCity) : events;
+  ? events.filter(event => event.location === selectedCity) 
+  : events;
   
   const eventsToDisplay = filteredEvents.slice(0, numEvents);
 
