@@ -7,7 +7,7 @@ if (process.env.NODE_ENV !== "production") {
 'use strict';
 
 import { google } from "googleapis";
-const SCOPES = ["https://www.googleapis.com/auth/calendar.events.public.readonly"];
+const SCOPES = ["https://www.googleapis.com/auth/calendar.events.readonly"];
 const redirect_uris = ["https://meet-chi-five.vercel.app/"];
 
 const calendar = google.calendar("v3");
