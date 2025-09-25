@@ -1,5 +1,5 @@
 // eslint-disable-next-line no-unused-vars
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import PropTypes from "prop-types";
 
 // eslint-disable-next-line react/prop-types
@@ -25,7 +25,9 @@ const CitySearch = ({ allLocations, onCitySelected }) => {
     }
   }
 
- 
+  useEffect(() => { 
+    setSuggestions(allLocations); 
+  }, [allLocations]);
 
   return (
     <div id="city-search">

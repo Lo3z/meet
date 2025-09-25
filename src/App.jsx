@@ -5,6 +5,8 @@ import CitySearch from './components/CitySearch';
 import NumberOfEvents from './components/NumberOfEvents';
 import { getEvents, extractLocations } from './api';
 
+import './App.css';
+
 function App() {
   const [events, setEvents] = useState([]);
   const [locations, setLocations] = useState([]);
@@ -21,9 +23,8 @@ function App() {
   }, []);
 
   const filteredEvents = selectedCity 
-  ? events.filter(event => event.location === selectedCity) 
-  : events;
-  
+    ? events.filter(event => event.location === selectedCity) 
+    : events;
   const eventsToDisplay = filteredEvents.slice(0, numEvents);
 
   return (
