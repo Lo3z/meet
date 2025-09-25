@@ -35,7 +35,7 @@ const getToken = async (code) => {
     'api/token' + '/' + encodeCode
   );
   const { access_token } = await response.json();
-  access_token && localStorage.setItem("acess_token", access_token);
+  access_token && localStorage.setItem("access_token", access_token);
 
   return access_token;
 };
