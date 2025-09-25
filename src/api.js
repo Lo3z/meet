@@ -7,7 +7,7 @@ export const extractLocations = (events) => {
 };
 
 const checkToken = async (accessToken) => {
-  const response  = await fetch(
+  const response = await fetch(
     `https://www.googleapis.com/oauth2/v1/tokeninfo?access_token=${accessToken}`
   );
   const result = await response.json();
@@ -17,7 +17,7 @@ const checkToken = async (accessToken) => {
 const removeQuery = () => {
   let newurl;
   if (window.history.pushState && window.location.pathname) {
-    newurl = 
+    newurl =
       window.location.protocol +
       "//" +
       window.location.host +
@@ -26,7 +26,7 @@ const removeQuery = () => {
   } else {
     newurl = window.location.protocol + "//" + window.location.host;
     window.history.pushState("", "", newurl);
-  }
+  }  
 };
 
 const getToken = async (code) => {
@@ -49,7 +49,7 @@ export const getEvents = async () => {
 
   if (token) {
     removeQuery();
-    const url = "api/get-events" + "/" + token;
+    const url =  "api/get-events" + "/" + token;
     const response = await fetch(url);
     const result = await response.json();
     if (result) {
@@ -62,6 +62,8 @@ export const getAccessToken = async () => {
   const accessToken = localStorage.getItem('access_token');
 
   const tokenCheck = accessToken && (await checkToken(accessToken));
+
+
   if (!accessToken || tokenCheck.error) {
     await localStorage.removeItem("access_token");
     const searchParams = new URLSearchParams(window.location.search);
