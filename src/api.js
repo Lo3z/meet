@@ -1,3 +1,5 @@
+// eslint-disable-next-line no-unused-vars
+import { getAuthURL } from "../auth-server/handler";
 import mockData from "./mock-data";
 
 export const extractLocations = (events) => {
@@ -70,7 +72,7 @@ export const getAccessToken = async () => {
     const code = await searchParams.get("code");
     if (!code) {
       const response = await fetch(
-        "api/get-auth-url"
+        "https://b0gsdrxd5c.execute-api.us-east-1.amazonaws.com/dev/api/get-auth-url"
       );
       const result = await response.json();
       const { authUrl } = result;
