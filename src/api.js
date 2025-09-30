@@ -1,5 +1,5 @@
 // eslint-disable-next-line no-unused-vars
-import { getAuthURL } from "../auth-server/handler";
+// import { getAuthURL } from "../auth-server/handler";
 import mockData from "./mock-data";
 
 export const extractLocations = (events) => {
