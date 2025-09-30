@@ -31,9 +31,7 @@ function App() {
   );
 
   const eventsToDisplay = uniqueEvents.slice(0, numEvents);
-  // console.log("unique events:", eventsToDisplay.map(e => e.id));
-  console.log('unque events - ',uniqueEvents )
-  // console.log("after map:", uniqueEvents.map(e => e.id));
+  console.log('unique events - ',uniqueEvents )
 
   return (
       <div className="App">
