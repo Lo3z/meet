@@ -1,5 +1,5 @@
 // eslint-disable-next-line no-unused-vars
-// import { getAuthURL } from "../auth-server/handler";
+import { getAuthURL } from "../auth-server/handler";
 import mockData from "./mock-data";
 
 export const extractLocations = (events) => {
@@ -34,7 +34,7 @@ const removeQuery = () => {
 const getToken = async (code) => {
   const encodeCode = encodeURIComponent(code);
   const response = await fetch(
-    `https://b0gsdrxd5c.execute-api.us-east-1.amazonaws.com/dev/api/token/${encodeCode}`
+    'api/token' + '/' + encodeCode
   );
   const { access_token } = await response.json();
   access_token && localStorage.setItem("access_token", access_token);
@@ -51,7 +51,8 @@ export const getEvents = async () => {
 
   if (token) {
     removeQuery();
-    const url =  `https://b0gsdrxd5c.execute-api.us-east-1.amazonaws.com/dev/api/get-events/${token}`;
+    const url =  "api/get-events" + "/" + token;
+    console.log(token);
     const response = await fetch(url);
     const result = await response.json();
     if (result) {
@@ -64,6 +65,7 @@ export const getAccessToken = async () => {
   const accessToken = localStorage.getItem('access_token');
 
   const tokenCheck = accessToken && (await checkToken(accessToken));
+  console.log(accessToken);
 
 
   if (!accessToken || tokenCheck.error) {
