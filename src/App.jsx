@@ -32,6 +32,7 @@ function App() {
 
   const eventsToDisplay = uniqueEvents.slice(0, numEvents);
   console.log("unique events:", eventsToDisplay.map(e => e.id));
+  console.log("after map:", uniqueEvents.map(e => e.id));
 
   return (
       <div className="App">
