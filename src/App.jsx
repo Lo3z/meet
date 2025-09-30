@@ -25,7 +25,13 @@ function App() {
   const filteredEvents = selectedCity 
     ? events.filter(event => event.location === selectedCity) 
     : events;
-  const eventsToDisplay = filteredEvents.slice(0, numEvents);
+
+  const uniqueEvents = Array.from(
+    new Map(filteredEvents.map(event => [String(event.id), event])).values()
+  );
+
+  const eventsToDisplay = uniqueEvents.slice(0, numEvents);
+  console.log("unique events:", eventsToDisplay.map(e => e.id));
 
   return (
       <div className="App">

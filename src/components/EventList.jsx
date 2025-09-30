@@ -6,9 +6,9 @@ import Event from './Event';
 // eslint-disable-next-line react/prop-types
 const EventList = ({ events }) => {
   return (
-    <ul id="event-list" aria-label="event list">
-      {events? events.map(event => <Event key={event.id} event={event} />): null}
-    </ul>
+   <ul id="event-list" aria-label="event list"> 
+   {events? events.map(event => <Event key={event.id} event={event} />): null}
+   </ul>
   );
 }
 
