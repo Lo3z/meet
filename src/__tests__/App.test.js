@@ -1,5 +1,5 @@
 /* eslint-env jest */
-import { render, within } from '@testing-library/react';
+import { render, screen, within, waitFor } from '@testing-library/react';
 // eslint-disable-next-line no-unused-vars
 import React from 'react';
 import App from './../App';
@@ -47,5 +47,32 @@ describe ('<App/> integration', () => {
     );
 
     expect(allRenderedEventItems.length).toBe(berlinEvents.length);
+  });
+
+  test('renders 32 events by default', async () => {
+    render(<App/>);
+
+    const eventList = await screen.findByRole("list", {name: /event list/i});
+
+    const renderedEvents = within(eventList). getAllByRole("listitem");
+    expect(renderedEvents).toHaveLength(32);
+  });
+
+  test('renders the number of events specified by the user', async () => {
+    render(<App/>);
+    
+    const user = userEvent.setup();
+    const input = screen.getByRole("spinbutton");
+
+    await user.click(input);
+    await user.keyboard("{Control>}a{/Control}");
+    await user.keyboard("10");
+    expect(input.value).toBe("10");
+
+    await waitFor(() => {
+      const eventList = screen.getByRole("list", {name: /event list/i});
+      const renderedEvents = within(eventList).getAllByRole("listitem");
+      expect(renderedEvents).toHaveLength(10);
+    });
   });
 });
