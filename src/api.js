@@ -1,4 +1,3 @@
-// eslint-disable-next-line no-unused-vars
 import { getAuthURL } from "../auth-server/handler";
 import mockData from "./mock-data";
 
@@ -52,7 +51,6 @@ export const getEvents = async () => {
   if (token) {
     removeQuery();
     const url =  "api/get-events" + "/" + token;
-    console.log(token);
     const response = await fetch(url);
     const result = await response.json();
     if (result) {
@@ -65,7 +63,6 @@ export const getAccessToken = async () => {
   const accessToken = localStorage.getItem('access_token');
 
   const tokenCheck = accessToken && (await checkToken(accessToken));
-  console.log(accessToken);
 
 
   if (!accessToken || tokenCheck.error) {
