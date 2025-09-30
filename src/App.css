@@ -31,23 +31,21 @@ input[type="number"] {
 }
 
 .city {
-  width: 300px;
+  width: 250px;
 }
 
 #city-search {
   display: flex;
   flex-direction: column;
-  margin: 0 auto;
+  margin: auto;
   position: relative;
-  width: 300px;
 }
 
 .suggestions {
+  width: 250px;
   position: absolute;
   top: 45px;
   z-index: 2;
-  left: 0;
-  width: 100%;
   align-self: center;
   margin: 0;
   font-size: 14px;
@@ -57,7 +55,7 @@ input[type="number"] {
 .suggestions > li {
   text-align: left;
   padding: 8px 6px 8px 10px;
-  background-color: gray;
+  background-color: steelblue;
   cursor: default;
 }
 
@@ -67,7 +65,7 @@ input[type="number"] {
 }
 
 .suggestions > li:hover {
-  background-color: #bcdcdb;
+  background-color: darkslategrey;
 }
 
 .event {
@@ -87,4 +85,5 @@ input[type="number"] {
   border-radius: 4px;
   outline: none;
   cursor: pointer;
+  background-color: steelblue;
 }

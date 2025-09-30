@@ -18,7 +18,7 @@ const Event = ({event}) => {
         </div>
       )}
 
-      <button onClick={toggleDetails}>
+      <button className="details-btn" onClick={toggleDetails}>
         {showDetails ? "Hide Details" : "Show Details"}
       </button>
     </li>
