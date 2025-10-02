@@ -31,7 +31,7 @@ function App() {
   );
 
   const eventsToDisplay = uniqueEvents.slice(0, numEvents);
-  console.log('unique events - ',uniqueEvents )
+  // console.log('unique events - ',uniqueEvents )
 
   return (
       <div className="App">
