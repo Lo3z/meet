@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import EventList from './components/EventList';
 import CitySearch from './components/CitySearch';
 import NumberOfEvents from './components/NumberOfEvents';
+import { InfoAlert, ErrorAlert } from './components/Alert';
 import { getEvents, extractLocations } from './api';
 
 import './App.css';
@@ -12,6 +13,8 @@ function App() {
   const [locations, setLocations] = useState([]);
   const [selectedCity, setSelectedCity] = useState("");
   const [numEvents, setNumEvents] = useState(32);
+  const [infoAlert, setInfoAlert] = useState("");
+  const [errorAlert, setErrorAlert] = useState("");
 
   useEffect(() => {
     const fetchEvents = async() => {
@@ -35,8 +38,12 @@ function App() {
 
   return (
       <div className="App">
-        <CitySearch allLocations={locations} onCitySelected={setSelectedCity}/>
-        <NumberOfEvents numEvents={numEvents} onNumEventsChanged={setNumEvents}/>
+        <div className="alerts-container">
+          {infoAlert.length ? <InfoAlert text={infoAlert}/> : null}
+          {errorAlert.length ? <ErrorAlert text={errorAlert}/> : null}
+        </div>
+        <CitySearch allLocations={locations} onCitySelected={setSelectedCity} setInfoAlert={setInfoAlert}/>
+        <NumberOfEvents numEvents={numEvents} onNumEventsChanged={setNumEvents} setErrorAlert={setErrorAlert}/>
         <EventList events={eventsToDisplay}/>
       </div>
   );

@@ -62,7 +62,7 @@ describe ('<App/> integration', () => {
     render(<App/>);
     
     const user = userEvent.setup();
-    const input = screen.getByRole("spinbutton");
+    const input = screen.getByLabelText(/number of events/i);
 
     await user.click(input);
     await user.keyboard("{Control>}a{/Control}");
