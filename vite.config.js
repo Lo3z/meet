@@ -40,7 +40,23 @@ export default defineConfig({
        "start_url": ".",
        "display": "standalone",
        "theme_color": "#000000",
-       "background_color": "#ffffff"
+       "background_color": "#ffffff",
+       "screenshots": [
+        {
+          "src": "MobileSS.jpg",
+          "sizes": "1080x1920",
+          "type": "image/png",
+          "form_factor": "narrow",
+          "label": "Mobile"
+        },
+        {
+          "src": "DesktopSS.png",
+          "sizes": "1920x1080",
+          "type": "image/png",
+          "form_factor": "wide",
+          "label": "Desktop"
+        }
+      ]
      },
      srcDir: 'src', // Update if your service-worker.js is elsewhere
      filename: 'service-worker.js', // Ensure it's accessible in production
