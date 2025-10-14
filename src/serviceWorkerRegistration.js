@@ -21,6 +21,7 @@ const isLocalhost = Boolean(
   );
   
   export function register(config) {
+    // eslint-disable-next-line no-undef
     if (process.env.NODE_ENV === 'production' && 'serviceWorker' in navigator) {
         window.addEventListener('load', () => {
           const swUrl = '/service-worker.js';
