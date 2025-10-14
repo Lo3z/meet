@@ -44,14 +44,14 @@ export default defineConfig({
        "screenshots": [
         {
           "src": "MobileSS.jpg",
-          "sizes": "1080x1920",
+          "sizes": "1179x2301",
           "type": "image/png",
           "form_factor": "narrow",
           "label": "Mobile"
         },
         {
           "src": "DesktopSS.png",
-          "sizes": "1920x1080",
+          "sizes": "1913x905",
           "type": "image/png",
           "form_factor": "wide",
           "label": "Desktop"
