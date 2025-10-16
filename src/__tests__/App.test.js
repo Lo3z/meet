@@ -1,7 +1,7 @@
 /* eslint-env jest */
 import { render, screen, within, waitFor } from '@testing-library/react';
 // eslint-disable-next-line no-unused-vars
-import * as React from 'react';
+import React from 'react';
 import App from './../App';
 import userEvent from '@testing-library/user-event';
 import { getEvents } from '../api';
