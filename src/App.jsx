@@ -56,7 +56,7 @@ function App() {
         </div>
         <CitySearch allLocations={locations} onCitySelected={setSelectedCity} setInfoAlert={setInfoAlert}/>
         <NumberOfEvents numEvents={numEvents} onNumEventsChanged={setNumEvents} setErrorAlert={setErrorAlert}/>
-        <CityEventsChart allLocations={locations} events={events}/>
+        <CityEventsChart allLocations={locations} events={eventsToDisplay}/>
         <EventList events={eventsToDisplay}/>
       </div>
   );
