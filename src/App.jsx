@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import EventList from './components/EventList';
 import CitySearch from './components/CitySearch';
 import NumberOfEvents from './components/NumberOfEvents';
+import CityEventsChart from './components/CityEventsChart';
 import { InfoAlert, ErrorAlert, WarningAlert } from './components/Alert';
 import { getEvents, extractLocations } from './api';
 
@@ -55,6 +56,7 @@ function App() {
         </div>
         <CitySearch allLocations={locations} onCitySelected={setSelectedCity} setInfoAlert={setInfoAlert}/>
         <NumberOfEvents numEvents={numEvents} onNumEventsChanged={setNumEvents} setErrorAlert={setErrorAlert}/>
+        <CityEventsChart allLocations={locations} events={events}/>
         <EventList events={eventsToDisplay}/>
       </div>
   );
