@@ -96,3 +96,16 @@ input[type="number"] {
   width: 130px;
   z-index: 1000;
 }
+
+.charts-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 36px;
+}
+
+
+@media (max-width: 768px){
+  .charts-container {
+    grid-template-columns: 1fr;
+  };
+};

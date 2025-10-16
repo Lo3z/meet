@@ -34,9 +34,10 @@ const CityEventsChart = ({allLocations, events}) => {
         margin={{
           top: 20,
           right: 20,
-          bottom: 100,
+          bottom: 60,
           left: -30
-        }}
+        }
+      }
       >
         <CartesianGrid strokeDasharray="3 3" />
         <XAxis 
